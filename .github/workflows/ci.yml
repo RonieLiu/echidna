@@ -4,6 +4,7 @@ on:
   push:
     branches:
     - master
+    - nix
   pull_request:
     branches:
     - master
@@ -22,7 +23,7 @@ jobs:
             apt-get: autoconf automake libtool
           - os: macos-latest
             brew: automake
-         
+
     steps:
       - name: Workaround for actions/cache#403
         if: runner.os == 'macOS'
